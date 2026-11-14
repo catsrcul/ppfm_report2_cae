@@ -46,7 +46,7 @@
     \fancyhead[C]{%
         \footnotesize
         \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l c r @{}}
-             PPFM - Relatório 1 & & 15/10/2026 \\
+             PPFM - Portefólio CAE de Extrusão & & 19/11/2026 \\
         \end{tabular*}
     }
     \fancyfoot[R]{Página \thepage}
@@ -113,11 +113,16 @@
 
     % Titulo
     \noindent\huge% [negrito removido: Processamento de Polímeros e Ferramentas Moldantes]
-Processamento de Polímeros e Ferramentas Moldantes\\ Relatório 1 - 15/10/2026
+Processamento de Polímeros e Ferramentas Moldantes\\ Portefólio CAE de Extrusão
     \vspace{\baselineskip}
 
     % Sub-Título
     \noindent\Large
+    Ansys Polyflow: matriz de fenda retangular\\[0.5\baselineskip]
+    \normalsize
+    \noindent Material/grade atribuído: Moplen HP648T (PP homopolímero nucleado, \qty{220}{\celsius})\\
+    Software: Ansys Polyflow 2026 R1 (Student)\\
+    Data: 19/11/2026
     \vspace{\baselineskip}
 
     %Autores
@@ -213,19 +218,17 @@ Processamento de Polímeros e Ferramentas Moldantes\\ Relatório 1 - 15/10/2026
 \phantomsection
 \addcontentsline{toc}{section}{Declaração de Utilização de Inteligência Artificial}
 \noindent\textbf{Ferramenta(s):} Claude; Gemini; Consensus \\[1.5em]
-\textbf{Finalidade:} Apoio na redação e na revisão de texto e deteção de inconsistências no relatório. \\[1.5em]
+\textbf{Finalidade:} Apoio à redação e revisão do texto, deteção de inconsistências entre secções, verificação do relatório face ao enunciado e pesquisa bibliográfica. \\[1.5em]
 \noindent\textbf{Contributo utilizado:}
 \begin{itemize}
-    \item Rascunhos de texto, que o grupo reescreveu antes de os incluir.
-    \item Identificação de inconsistências entre secções do relatório.
-    \item Checklist de conclusão do relatório face ao enunciado do portefólio.
-    \item Revisão ortográfica e gramatical de texto do relatório.
-    \item Pesquisa científica de artigos
+    \item Rascunhos de texto da \autoref{sec:modelo} e da \autoref{sec:discussao}, revistos e reescritos pelo grupo antes da inclusão.
+    \item Identificação de inconsistências terminológicas e numéricas entre secções.
+    \item Lista de verificação do relatório face ao enunciado do portefólio.
+    \item Revisão ortográfica e gramatical (PT-PT).
+    \item Pesquisa de artigos científicos.
 \end{itemize}
 
-
-
-\noindent\textbf{Como foi verificado pelo grupo:} Todos os valores numéricos, parâmetros térmicos extraídos no software TRIOS ($T_{\mathrm{m}}$, $T_{\mathrm{c}}$, $\Delta H$) e cálculos derivados ($X_{\mathrm{c}}$, médias e desvios-padrão de MFR) foram conferidos manualmente pelo grupo contra os ficheiros originais de ensaio e as folhas de cálculo. As sugestões de texto e estrutura geradas pelas ferramentas foram criticamente revistas, adaptadas e reformuladas pelos autores, garantindo que as interpretações físicas, as fontes bibliográficas consultadas e as decisões de engenharia refletem exclusivamente a análise e a responsabilidade técnica do grupo.
+\noindent\textbf{Como foi verificado pelo grupo:} A configuração dos Casos R e M (modelo reológico, caudal, condições de fronteira e estratégia de convergência) foi definida e executada pelo grupo no Ansys Polyflow. Todos os valores numéricos ($Q_{\mathrm{in}}$, $Q_{\mathrm{out}}$, $\Delta p$, $\dot{\gamma}$, $B_W$, $B_H$) foram extraídos pelo grupo dos resultados de cada caso e verificados com os ficheiros de saída do Polyflow; a verificação analítica de $\Delta p$ e os valores de controlo da ficha reológica foram recalculados manualmente. As sugestões de texto foram revistas criticamente pelos autores, que assumem a responsabilidade pelas interpretações físicas, conclusões e decisões de engenharia apresentadas.
 
 \newpage
 
