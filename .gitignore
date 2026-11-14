@@ -19,5 +19,5 @@
 **/.DS_Store
 prism-uploads/
 
-# Mantém-se o main.pdf monitorizado no repositório conforme diretrizes do cofre
-!main.pdf
+# PDF compilado (ignorado para evitar conflitos binários entre colaboradores; cada um compila localmente)
+main.pdf
