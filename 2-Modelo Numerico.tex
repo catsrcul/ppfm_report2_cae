@@ -72,7 +72,7 @@ As condições de fronteira foram atribuídas às \textit{Named Selections} forn
         INLET ($z = 0$) & Escoamento completamente desenvolvido, $Q = \qty{2e-7}{\metre\cubed\per\second}$ & Caudal imposto no quarto do domínio (\qty{200}{\milli\metre\cubed\per\second}). \\
         DIEWALL & Parede, $\mathbf{v} = \mathbf{0}$ & Não escorregamento no troço da matriz. \\
         FREESURFACE & Superfície livre, $\mathbf{v}\cdot\mathbf{n} = 0$, tensões nulas & Posição calculada; fixa apenas na aresta comum com DIEWALL. \\
-        OUTLET ($z = \qty{60}{\milli\metre}$) & $\boldsymbol{\sigma}\cdot\mathbf{n} = \mathbf{0}$, como no artigo~\cite{Zhang2026Anisotropic} % CONFIRMAR no setup do Polyflow
+        OUTLET ($z = \qty{60}{\milli\metre}$) & $\boldsymbol{\sigma}\cdot\mathbf{n} = \mathbf{0}$, como no artigo~\cite{Zhang2026Anisotropic}
         & Secção final, onde se medem $B_W$ e $B_H$. \\
         SYMETRYX, SYMETRYY & Simetria, $v_n = 0$ & Permitem simular 1/4 do domínio. \\
         \bottomrule
