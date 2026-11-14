@@ -21,3 +21,4 @@ prism-uploads/
 
 # PDF compilado (ignorado para evitar conflitos binários entre colaboradores; cada um compila localmente)
 main.pdf
+/portfolio2_cae_professor
