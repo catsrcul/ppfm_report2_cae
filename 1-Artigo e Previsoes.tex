@@ -1,0 +1,29 @@
+\section{Artigo e Previsões}
+
+
+\subsection{Leitura crítica}
+O artigo de Zhang et al. (2026) investiga o inchamento anisotrópico do extrudido durante a extrusão de polímeros através de uma fieira de fenda de geometria retangular. O problema abordado deve-se ao facto de os modelos existentes, embora expliquem o inchamento do extrudido com base na recuperação elástica do material, não descreverem completamente as diferenças de expansão observadas nas várias direções deste tipo de fieiras. Neste contexto, os autores propõem desenvolver um modelo matemático que relaciona a distribuição local da velocidade do escoamento com a distribuição do inchamento do extrudido. A consistência do modelo é posteriormente avaliada através da comparação das suas previsões com resultados de simulações CFD realizadas no ANSYS Polyflow, recorrendo ao modelo constitutivo da Lei da Potência. Na formulação do modelo matemático, os autores assumem um fluido incompressível, um escoamento laminar completamente desenvolvido, condições isotérmicas e uma fieira idealmente infinita em largura.
+
+O domínio computacional utilizado nas simulações CFD encontra-se dividido em duas regiões. A primeira corresponde à zona confinada da matriz, onde o polímero escoa no interior do canal da fieira. Esta região permite estabelecer a distribuição de velocidades à saída da matriz, sendo aplicada uma condição de não deslizamento nas paredes, que impõe velocidade nula do fluido junto às mesmas. A segunda região corresponde à zona de escoamento em superfície livre, situada imediatamente após a saída da fieira. Nesta região, o polímero deixa de estar confinado pelas paredes da matriz, ficando livre para se deformar e expandir. É, portanto, nesta zona que se simula e avalia o fenómeno de inchamento do extrudido.
+
+Importa, contudo, salientar que os resultados obtidos não constituem uma validação física do inchamento viscoelástico de polímeros reais. Nas simulações CFD, os autores recorrem ao modelo da Lei da Potência, que permite representar o comportamento não newtoniano e pseudoplástico do fluido, mas não tem em conta a sua natureza viscoelástica, nomeadamente a acumulação e posterior recuperação das tensões elásticas durante o escoamento na fieira. Assim, a comparação entre o modelo matemático e os resultados numéricos permite avaliar essencialmente a consistência geométrica e cinemática da abordagem proposta, não reproduzindo integralmente o inchamento real dos polímeros fundidos. Adicionalmente, as simulações são realizadas em condições isotérmicas, não sendo considerados os efeitos dos gradientes de temperatura sobre o escoamento e a viscosidade.
+
+Outra limitação importante vem da aproximação de largura infinita adotada no modelo matemático, que pressupõe uma distribuição de velocidades uniforme na direção da largura da fieira, desprezando os efeitos das paredes laterais. Contudo, nas simulações CFD tridimensionais, que consideram uma condição de não deslizamento nas paredes, verifica-se uma diminuição local da velocidade nas regiões próximas das mesmas. Esta diferença provoca um afastamento entre as previsões teóricas e os resultados numéricos, particularmente na zona periférica da fieira. Os autores identificam que, nas regiões próximas das extremidades, os erros podem ultrapassar 30\%, sobretudo na componente do deslocamento segundo a direção da espessura. 
+
+
+
+\subsection{Previsões fundamentadas}
+
+\textbf{P1. Onde se esperam as maiores taxas de deformação e porquê?} 
+
+As maiores taxas de deformação vão surgir nas paredes da zona confinada da matriz, com o pico máximo a acontecer nas arestas de saída. Dentro da fieira, o polímero adere à parede devido à condição de não escorregamento, o que leva a velocidade local a zero e empurra o gradiente transversal para o limite máximo. Exatamente na aresta de saída, o fluido passa de repente desse bloqueio físico para a zona de superfície livre. Este salto cria um ponto crítico onde o polímero sofre a variação de velocidade mais brusca de toda a simulação para se conseguir reorganizar. \\
+
+
+\textbf{P2. O Caso M deverá exigir uma queda de pressão superior ou inferior à obtida no Caso R? Justifique. }
+
+O Caso M vai precisar de uma queda de pressão maior do que a do Caso R. Embora o polipropileno Moplen HP648T tenha um índice de consistência mais baixo ($K=$900 Pa$\cdot$s face aos 1000 Pa$\cdot$s do Caso R), o seu índice de comportamento ($n=$0,64 contra $n=$0,60) mostra que é um material com menor reofluidificação. Isto significa que, nas taxas de corte reais que vão acontecer na extrusão, este polímero perde menos viscosidade do que o fluido de referência. Como mantém uma viscosidade aparente mais alta, o escoamento tem mais resistência e exige uma maior pressão para conseguir manter o caudal de 200 mm$^3$/s. \\
+
+
+\textbf{P3. A alteração da reologia deverá modificar a deformação geométrica calculada do extrudido? Em que sentido? }
+
+A mudança na reologia aumentará o inchamento do extrudido no Caso M. Uma vez que o modelo não considera a elasticidade do polímero, a expansão simulada não é o relaxamento viscoelástico, mas sim o resultado de um reajuste cinemático. Por ter menor reofluidificação, este material desenvolve um perfil de velocidades mais parabólico dentro da matriz. À saída, a necessidade de conservar o caudal obriga esse perfil a uniformizar-se na superfície livre. Sendo o perfil inicial do Caso M mais acentuado, a sua uniformização exige deslocar mais massa do centro para as laterais, resultando numa expansão geométrica superior.

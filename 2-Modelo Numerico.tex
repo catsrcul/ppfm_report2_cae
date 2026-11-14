@@ -1,0 +1,93 @@
+% =====================================================================
+% 2 - Modelo Numérico
+% Rascunho de apoio (IA) - o grupo deve rever e reescrever antes de incluir.
+% Valores retirados do enunciado, da ficha reológica (Grupo 3) e dos
+% ficheiros polyflow.lst dos Casos R (PFL) e M (PFL-1).
+% Campos a vermelho (\preencher) = confirmar no setup do Polyflow.
+% =====================================================================
+
+\section{Modelo Numérico}
+\label{sec:modelo}
+
+\subsection{Domínio, Geometria e Malha}
+\label{subsec:dominio}
+
+A geometria reproduz o caso de Zhang et al.~\cite{Zhang2026Anisotropic}: fieira de fenda retangular com largura $W = 20$~mm, espessura $2H = 2$~mm, troço confinado $L = 20$~mm e região de jato livre $L_F = 40$~mm. Explorando as duas simetrias da secção, simula-se apenas um quarto do domínio ($10 \times 1 \times 60$~mm), composto por dois corpos: o troço confinado da matriz ($z \in [0,20]$~mm) e o jato livre ($z \in [20,60]$~mm). Os dois corpos formam um único componente com \textit{Share Topology}, pelo que a interface em $z = 20$~mm é interna e a malha é conforme.
+
+Foi utilizada a malha hexaédrica fornecida pela equipa docente (\textit{MultiZone}, dimensão de elemento de 0,3~mm), com 27\,336 elementos e 35\,350 nós. Não foram introduzidas alterações à geometria, à malha nem às \textit{Named Selections}; os Casos R e M partilham exatamente a mesma discretização. A malha do artigo é graduada (10 elementos na altura, 40 na largura, 30 no troço confinado e 35 no jato livre, com refinamento junto à saída), ao passo que a malha fornecida é uniforme, pelo que os resultados não são comparáveis em detalhe com os do artigo, sobretudo junto à aresta de saída.
+
+\subsection{Hipóteses do Regime}
+\label{subsec:hipoteses}
+
+Em ambos os casos resolve-se o problema de Navier--Stokes 3D com as seguintes hipóteses, coerentes com o caso de referência:
+\begin{itemize}
+    \item escoamento estacionário e isotérmico (não se resolve a equação da energia);
+    \item fluido incompressível e newtoniano generalizado, isto é, puramente viscoso, sem memória elástica (o Polyflow usa um fator de compressibilidade relativa de $10^{-2}$ apenas para estabilizar o cálculo da pressão, sem alterar a hipótese física);
+    \item forças de inércia e gravidade desligadas na configuração do Polyflow (a massa volúmica no \textit{setup} é 1~kg/m$^3$, valor sem efeito com a inércia desligada). A hipótese é adequada ao escoamento lento de um fundido: com $\rho \approx 760$~kg/m$^3$ (ficha), velocidade média $\dot{V}/(W\,2H) \approx 0{,}02$~m/s, diâmetro hidráulico $\approx 4$~mm e $\eta \approx 200$~Pa$\cdot$s, obtém-se $Re \approx 3 \times 10^{-4}$;
+    \item aderência total à parede da matriz e superfície livre sem tensão superficial.
+\end{itemize}
+A hipótese de fluido puramente viscoso é a mais relevante para a interpretação dos resultados: a deformação do extrudido calculada resulta apenas do rearranjo cinemático do perfil de velocidades à saída da matriz, e não da recuperação elástica do polímero.
+
+\subsection{Modelo Reológico (Casos R e M)}
+\label{subsec:reologia}
+
+A viscosidade é descrita pela lei de potência, que no Polyflow tem a forma
+\begin{equation}
+    \eta(\dot{\gamma}) = \mathit{fac}\,(t_{\mathrm{nat}}\,\dot{\gamma})^{\mathit{expo}-1} = K\,\dot{\gamma}^{\,n-1},
+    \label{eq:leipotencia}
+\end{equation}
+com $\mathit{fac} = K$, $\mathit{expo} = n$ e tempo de referência $t_{\mathrm{nat}} = 1$~s, de modo que $\mathit{fac}$ tem o valor numérico de $K$ em Pa$\cdot$s$^n$. O Caso M foi criado a partir de uma cópia do Caso R, alterando apenas $\mathit{fac}$ e $\mathit{expo}$ (Tabela~\ref{tab:reologia}).
+
+\begin{table}[H]
+    \centering
+    \caption{Parâmetros reológicos dos Casos R e M (lei de potência).}
+    \label{tab:reologia}
+    \begin{tabular}{lcc}
+        \toprule
+        & Caso R (referência) & Caso M (Moplen HP648T) \\
+        \midrule
+        Material & Fluido de referência~\cite{Zhang2026Anisotropic} & PP homopolímero nucleado \\
+        Temperatura associada & -- & 220~°C \\
+        $K$ ($\mathit{fac}$) [Pa$\cdot$s$^n$] & 1000 & 900 \\
+        $n$ ($\mathit{expo}$) [--] & 0,60 & 0,64 \\
+        $t_{\mathrm{nat}}$ [s] & 1 & 1 \\
+        Intervalo de validade de $\dot{\gamma}$ [s$^{-1}$] & -- & 60 -- 500 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+Os parâmetros do Caso M foram confirmados contra os valores de controlo da ficha~\cite{FichaMoplen}: pela Eq.~\ref{eq:leipotencia} obtém-se $\eta = 206$~Pa$\cdot$s a 60~s$^{-1}$ e $\eta = 96$~Pa$\cdot$s a 500~s$^{-1}$, iguais aos tabelados. Fora do intervalo de 60 a 500~s$^{-1}$, a utilização da lei corresponde a extrapolação, o que será avaliado na Secção~\ref{sec:casos}. O artigo usa $K = 1000$~Pa$\cdot$s$^n$ e $n = 0{,}5$~\cite{Zhang2026Anisotropic}; o Caso R usa o mesmo $K$ mas $n = 0{,}6$, valor fixado no enunciado, pelo que a reprodução do caso de Zhang é válida para a geometria e para $K$, não para $n$. Como $n < 0{,}75$ nos dois casos, o guia do enunciado indica que o Polydata emite um aviso ao introduzir $\mathit{expo}$, o que motiva a estratégia de convergência descrita na Secção~\ref{subsec:numerica}.
+
+\subsection{Condições de Fronteira}
+\label{subsec:fronteiras}
+
+As condições de fronteira foram atribuídas às \textit{Named Selections} fornecidas, iguais nos dois casos (Tabela~\ref{tab:fronteiras}).
+
+\begin{table}[H]
+    \centering
+    \caption{Condições de fronteira aplicadas nos Casos R e M.}
+    \label{tab:fronteiras}
+    \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.5cm} >{\raggedright\arraybackslash}p{4cm} X}
+        \toprule
+        \textit{Named Selection} & Condição & Significado físico \\
+        \midrule
+        INLET ($z = 0$) & Escoamento completamente desenvolvido & Caudal imposto $Q = 2 \times 10^{-7}$~m$^3$/s (200~mm$^3$/s no quarto do domínio); o perfil de entrada é calculado pelo Polyflow como escoamento de canal 2D na secção de entrada. \\
+        \midrule
+        DIEWALL & Parede, $\mathbf{v} = \mathbf{0}$ & Aderência total do fundido à parede do troço confinado. \\
+        \midrule
+        FREESURFACE & Superfície livre & Tensões nulas e condição cinemática $\mathbf{v}\cdot\mathbf{n} = 0$; a posição da superfície é incógnita, ficando imposta apenas na aresta comum com DIEWALL (saída da matriz). \\
+        \midrule
+        OUTLET ($z = 60$~mm) & Fronteira livre de tensões ($\boldsymbol{\sigma}\cdot\mathbf{n} = \mathbf{0}$), como no artigo~\cite{Zhang2026Anisotropic} \preencher{confirmar no setup} & Secção final do extrudido, onde se medem $B_W$ e $B_H$. \\
+        \midrule
+        SYMETRYX, SYMETRYY & Plano de simetria & $v_n = 0$ e tensão tangencial nula; permitem simular apenas 1/4 do domínio. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Configuração Numérica}
+\label{subsec:numerica}
+
+Seguiu-se a configuração trabalhada nas aulas, sem alterações adicionais. Para garantir a convergência com $n < 0{,}75$, ativou-se a opção \textit{Enable evolution on moving boundaries}, que introduz progressivamente a superfície livre fazendo variar o parâmetro de evolução $S$ de 0 a 1 (passo inicial $\Delta S = 0{,}01$, mínimo $10^{-4}$, máximo $0{,}25$). A lei de viscosidade é resolvida pelo método de Newton e a deformação da malha do jato livre é acompanhada pelo algoritmo de remalhagem Optimesh~3D. Em cada passo considera-se a convergência atingida quando a variação relativa da solução é inferior a $10^{-3}$, critério definido pela equipa docente.
+
+Nos dois casos a evolução chegou a $S = 1$ em 10 passos, sem nenhum passo falhado, pelo que não foi necessário ativar as iterações de Picard. Os tempos de cálculo foram de 409~s (Caso R) e 336~s (Caso M). Estas opções afetam apenas a estabilidade do processo numérico e não alteram o modelo reológico, o caudal imposto nem as condições físicas.
+

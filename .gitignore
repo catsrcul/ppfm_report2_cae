@@ -1,0 +1,23 @@
+# Ficheiros auxiliares de compilação LaTeX
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.bcf
+*.run.xml
+
+# Ficheiros de sistema e temporários de importação
+.DS_Store
+**/.DS_Store
+prism-uploads/
+
+# Mantém-se o main.pdf monitorizado no repositório conforme diretrizes do cofre
+!main.pdf
