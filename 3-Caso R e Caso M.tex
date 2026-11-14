@@ -1,7 +1,7 @@
 \section{Caso R e Caso M}
 \label{sec:casos}
 
-A extração de resultados seguiu a mesma metodologia nos dois casos: a queda de pressão foi calculada por $\Delta p = \bar{p}_{\mathrm{ent}} - \bar{p}_{\mathrm{out}}$, com médias de área em $z = 0$~mm e $z = 20$~mm, e os rácios de inchamento na secção final ($z = 60$~mm) por $B_W = x_{\max}/(W/2)$ e $B_H = y_{\max}/H$, com $W/2 = 10$~mm e $H = 1$~mm.
+A extração de resultados seguiu a mesma metodologia nos dois casos: a queda de pressão foi calculada por $\Delta p = \bar{p}_{\mathrm{ent}} - \bar{p}_{\text{saída}}$, com médias de área em $z = 0$~mm e $z = 20$~mm, e os rácios de inchamento na secção final ($z = 60$~mm) por $B_W = x_{\max}/(W/2)$ e $B_H = y_{\max}/H$, com $W/2 = 10$~mm e $H = 1$~mm.
 
 \subsection{Verificação Numérica e Controlo de Coerência Física}
 \label{subsec:verificacao}
@@ -17,8 +17,8 @@ A estratégia de evolução convergiu com sucesso em ambos os casos ($S = 1$ em 
         \toprule
         Caso & $|Q_{\mathrm{in}}|$ [m$^3$/s] & $|Q_{\mathrm{out}}|$ [m$^3$/s] & $\varepsilon_Q$ [\%] & Passos (falhados) & Tempo [s] \\
         \midrule
-        R & $2{,}0000 \times 10^{-7}$ & $1{,}99982 \times 10^{-7}$ & 0,009 & 10 (0) & 409 \\
-        M & $2{,}0000 \times 10^{-7}$ & $1{,}99982 \times 10^{-7}$ & 0,009 & 10 (0) & 336 \\
+        R & $2{,}000 \times 10^{-7}$ & $1{,}999 \times 10^{-7}$ & 0,009 & 10 (0) & 409 \\
+        M & $2{,}000 \times 10^{-7}$ & $1{,}999 \times 10^{-7}$ & 0,009 & 10 (0) & 336 \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -116,6 +116,8 @@ Como se observa na Figura~\ref{fig:validade_ficha}, apenas uma fração estreita
 \subsection{Quadro Síntese Comparativo (Caso R vs. Caso M)}
 \label{subsec:sintese}
 
+Na Tabela~\ref{tab:sintese_RM} apresentam-se e comparam-se as grandezas globais extraídas para o escoamento a caudal imposto ($Q = 2 \times 10^{-7}$~m$^3$/s no quarto do domínio), confrontando o fluido de referência (Caso R) com o polipropileno Moplen HP648T (Caso M). A variação relativa percentual é calculada por $(M-R)/R \times 100\%$.
+
 \begin{table}[H]
     \centering
     \small
@@ -126,7 +128,7 @@ Como se observa na Figura~\ref{fig:validade_ficha}, apenas uma fração estreita
         Grandeza & Caso R & Caso M & Variação ($M/R$) \\
         \midrule
         $\bar{p}_{\mathrm{ent}}$ [kPa] & 288,0 & 302,3 & $+5{,}0$\,\% \\
-        $\bar{p}_{\mathrm{out}}$ [kPa] & 0,5 & 0,8 & $+53{,}5$\,\% \\
+        $\bar{p}_{\text{saída}}$ [kPa] & 0,5 & 0,8 & $+53{,}5$\,\% \\
         $\Delta p$ [kPa] & 287,4 & 301,5 & $+4{,}9$\,\% \\
         $\dot{\gamma}_{\max}$ no domínio [s$^{-1}$] & 81,5 & 80,3 & $-1{,}5$\,\% \\
         $\dot{\gamma}$ médio em $z = 19$~mm [s$^{-1}$] & 29,1 & 29,3 & $+0{,}7$\,\% \\
