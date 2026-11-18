@@ -233,6 +233,46 @@ Processamento de Polímeros e Ferramentas Moldantes\\ Portefólio CAE de Extrus�
 \newpage % new page comment
 
 \appendix
+
+
+\section{Tabela dos Parâmetros Reológicos dos Casos R e M}
+\label{app:reologia}
+
+A \autoref{tab:reologia} complementa a \autoref{subsec:reologia}, resumindo os parâmetros da lei de potência usados nos Casos R e M.
+
+\begin{table}[H]
+    \centering
+    \caption{Parâmetros reológicos dos Casos R e M (lei de potência). Caso R: Zhang et al.~\cite{Zhang2026Anisotropic} e enunciado; Caso M: ficha reológica~\cite{FichaMoplen}.}
+    \label{tab:reologia}
+    \begin{tabular}{lcc}
+        \toprule
+        & Caso R (referência) & Caso M (Moplen HP648T) \\
+        \midrule
+        Material & Fluido de referência~\cite{Zhang2026Anisotropic} & PP homopolímero nucleado \\
+        Temperatura associada & -- & \qty{220}{\celsius} \\
+        $K$ ($\mathit{fac}$) [\unit{\pascal\second\tothe{n}}] & 1000 & 900 \\
+        $n$ ($\mathit{expo}$) [--] & 0,60 & 0,64 \\
+        $t_{\mathrm{nat}}$ [\unit{\second}] & 1 & 1 \\
+        Intervalo de validade de $\dot{\gamma}$ [\unit{\per\second}] & -- & 60--500 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \section{Gráfico com o Intervalo de Validade da Ficha Reológica}
 \label{app:validade}
 
@@ -247,5 +287,7 @@ A \autoref{fig:validade_ficha} complementa a \autoref{subsec:validade}, onde é 
     \caption{Curva reológica do Moplen HP648T a \qty{220}{\celsius} e confronto entre o intervalo de validade da ficha e a gama de taxas de deformação obtida na fieira.}
     \label{fig:validade_ficha}
 \end{figure}
+
+
 
 \end{document}
