@@ -33,7 +33,7 @@ A viscosidade é descrita pela lei de potência, que no Polyflow tem a forma
     \eta(\dot{\gamma}) = \mathit{fac}\,(t_{\mathrm{nat}}\,\dot{\gamma})^{\mathit{expo}-1} = K\,\dot{\gamma}^{\,n-1},
     \label{eq:leipotencia}
 \end{equation}
-onde $\eta$ é a viscosidade aparente, $\dot{\gamma}$ a taxa de deformação, $\mathit{fac} = K$ o fator de consistência, $\mathit{expo} = n$ o índice de comportamento e $t_{\mathrm{nat}} = \qty{1}{\second}$ o tempo de referência. O Caso M foi criado a partir de uma cópia do Caso R, alterando apenas $\mathit{fac}$ e $\mathit{expo}$ (\autoref{tab:reologia}, \autoref{app:reologia}).
+onde $\eta$ é a viscosidade aparente, $\dot{\gamma}$ a taxa de deformação, $\mathit{fac} = K$ o fator de consistência, $\mathit{expo} = n$ o índice de comportamento e $t_{\mathrm{nat}} = \qty{1}{\second}$ o tempo de referência. O Caso M foi criado a partir de uma cópia do Caso R, onde apenas se alteraram $\mathit{fac}$ e $\mathit{expo}$ (\autoref{tab:reologia}, Anexo~\ref{app:reologia}).
 
 Os parâmetros do Caso M foram confirmados com os valores de controlo da ficha~\cite{FichaMoplen}: pela \autoref{eq:leipotencia} obtém-se $\eta = \qty{206}{\pascal\second}$ a \qty{60}{\per\second} e $\eta = \qty{96}{\pascal\second}$ a \qty{500}{\per\second}, iguais aos tabelados. Fora do intervalo de \qtyrange{60}{500}{\per\second}, a lei de potência é extrapolada (\autoref{subsec:validade}). O artigo usa $K = \qty{1000}{\pascal\second\tothe{n}}$ e $n = \num{0,5}$~\cite{Zhang2026Anisotropic}; o Caso R usa o mesmo $K$, mas $n = \num{0,6}$, fixado no enunciado, pelo que reproduz o artigo na geometria e em $K$, mas não em $n$.
 
@@ -69,3 +69,8 @@ As condições de fronteira foram atribuídas às \textit{Named Selections} forn
         \bottomrule
     \end{tabularx}
 \end{table}
+
+\subsection{Configuração Numérica}
+\label{subsec:numerica}
+
+Seguiu-se a configuração trabalhada nas aulas. Como $n < \num{0,75}$ nos dois casos, ativou-se a opção \textit{Enable evolution on moving boundaries}, que introduz progressivamente a superfície livre ao fazer variar o parâmetro de evolução $S$ de 0 a 1 (passo inicial \num{0,01}, mínimo \num{e-4}, máximo \num{0,25}). A lei de viscosidade é resolvida pelo método de Newton e a malha do jato livre é ajustada pelo algoritmo de remalhagem Optimesh~3D. Em cada passo, a convergência é atingida quando a variação relativa da solução é inferior a \num{e-3}, critério definido pela equipa docente. Nos dois casos a evolução chegou a $S = 1$ em 10 passos, sem passos falhados, pelo que não foi necessário ativar as iterações de Picard. Estas opções afetam apenas a estabilidade numérica, não o modelo reológico, o caudal nem as condições físicas.
