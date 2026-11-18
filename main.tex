@@ -32,6 +32,8 @@
 \usepackage{tabularx}
 \usepackage[hidelinks]{hyperref}
 \usepackage{xurl}
+\usepackage{enumitem}
+\setlist{itemsep=0pt,parsep=0pt,topsep=3pt}
 \providecommand{\doi}[1]{\href{https://doi.org/#1}{\nolinkurl{https://doi.org/#1}}}
 \providecommand{\preencher}[1]{\textcolor{red}{[#1]}}
 \geometry{margin=2.5cm}
@@ -243,6 +245,8 @@ A \autoref{tab:reologia} complementa a \autoref{subsec:reologia}, resumindo os p
 
 \begin{table}[H]
     \centering
+    \footnotesize
+    \setlength{\tabcolsep}{4pt}
     \caption{Parâmetros reológicos dos Casos R e M (lei de potência). Caso R: Zhang et al.~\cite{Zhang2026Anisotropic} e enunciado; Caso M: ficha reológica~\cite{FichaMoplen}.}
     \label{tab:reologia}
     \begin{tabular}{lcc}

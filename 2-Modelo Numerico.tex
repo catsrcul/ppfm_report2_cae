@@ -53,7 +53,8 @@ As condições de fronteira foram atribuídas às \textit{Named Selections} forn
 
 \begin{table}[H]
     \centering
-    \small
+    \footnotesize
+    \setlength{\tabcolsep}{4pt}
     \caption{Condições de fronteira aplicadas nos Casos R e M.}
     \label{tab:fronteiras}
     \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.8cm} >{\raggedright\arraybackslash}p{4.2cm} X}
@@ -70,7 +71,4 @@ As condições de fronteira foram atribuídas às \textit{Named Selections} forn
     \end{tabularx}
 \end{table}
 
-\subsection{Configuração Numérica}
-\label{subsec:numerica}
 
-Seguiu-se a configuração trabalhada nas aulas. Como $n < \num{0,75}$ nos dois casos, ativou-se a opção \textit{Enable evolution on moving boundaries}, que introduz progressivamente a superfície livre ao fazer variar o parâmetro de evolução $S$ de 0 a 1 (passo inicial \num{0,01}, mínimo \num{e-4}, máximo \num{0,25}). A lei de viscosidade é resolvida pelo método de Newton e a malha do jato livre é ajustada pelo algoritmo de remalhagem Optimesh~3D. Em cada passo, a convergência é atingida quando a variação relativa da solução é inferior a \num{e-3}, critério definido pela equipa docente. Nos dois casos a evolução chegou a $S = 1$ em 10 passos, sem passos falhados, pelo que não foi necessário ativar as iterações de Picard. Estas opções afetam apenas a estabilidade numérica, não o modelo reológico, o caudal nem as condições físicas.
