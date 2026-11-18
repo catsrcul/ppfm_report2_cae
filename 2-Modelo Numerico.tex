@@ -21,9 +21,9 @@ Em ambos os casos, coerentes com o caso de referência, admite-se:
     \item escoamento 3D, estacionário e isotérmico (sem equação da energia);
     \item fluido incompressível, newtoniano generalizado e puramente viscoso, sem memória elástica;
     \item escoamento de Stokes, sem inércia nem gravidade: com $\rho \approx \qty{760}{\kilo\gram\per\metre\cubed}$~\cite{FichaMoplen}, velocidade média de \qty{0,02}{\metre\per\second}, diâmetro hidráulico de \qty{4}{\milli\metre} e $\eta \approx \qty{200}{\pascal\second}$, obtém-se $Re \approx \num{3e-4}$;
-    \item não escorregamento na parede da matriz e superfície livre sem tensão superficial.
+    \item não escorregamento na parede da fieira e superfície livre sem tensão superficial.
 \end{itemize}
-A hipótese de fluido puramente viscoso é a mais relevante para a interpretação: a deformação calculada do extrudido resulta apenas do rearranjo do perfil de velocidades à saída da matriz, e não da recuperação elástica do polímero.
+A hipótese de fluido puramente viscoso é a mais relevante para a interpretação: a deformação calculada do extrudido resulta apenas do rearranjo do perfil de velocidades à saída da fieira, e não da recuperação elástica do polímero.
 
 \subsection{Modelo Reológico (Casos R e M)}
 \label{subsec:reologia}
@@ -70,7 +70,7 @@ As condições de fronteira foram atribuídas às \textit{Named Selections} forn
         \textit{Named Selection} & Condição & Significado físico \\
         \midrule
         INLET ($z = 0$) & Escoamento completamente desenvolvido, $Q = \qty{2e-7}{\metre\cubed\per\second}$ & Caudal imposto no quarto do domínio (\qty{200}{\milli\metre\cubed\per\second}). \\
-        DIEWALL & Parede, $\mathbf{v} = \mathbf{0}$ & Não escorregamento no troço da matriz. \\
+        DIEWALL & Parede, $\mathbf{v} = \mathbf{0}$ & Não escorregamento no troço da fieira. \\
         FREESURFACE & Superfície livre, $\mathbf{v}\cdot\mathbf{n} = 0$, tensões nulas & Posição calculada; fixa apenas na aresta comum com DIEWALL. \\
         OUTLET ($z = \qty{60}{\milli\metre}$) & $\boldsymbol{\sigma}\cdot\mathbf{n} = \mathbf{0}$, como no artigo~\cite{Zhang2026Anisotropic}
         & Secção final, onde se medem $B_W$ e $B_H$. \\

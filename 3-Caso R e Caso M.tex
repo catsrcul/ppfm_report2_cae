@@ -32,7 +32,7 @@ onde $\dot{\gamma}_w$ é a taxa de deformação na parede, $h = 2H = \qty{2}{\mi
 \subsection{Campos de Escoamento e Deformação do Extrudido}
 \label{subsec:resultados}
 
-\paragraph{Velocidade.} A \autoref{fig:velocidades} mostra a velocidade no plano de simetria $Y = 0$, com escala comum. No troço da matriz, o perfil está desenvolvido, com velocidade máxima no núcleo ($X = 0$) e velocidade nula na parede lateral ($X = \qty{10}{\milli\metre}$). A jusante da aresta de saída, o núcleo desacelera e a periferia acelera até um escoamento em bloco (\textit{plug flow}). A velocidade no jato livre, \qty{0,018}{\metre\per\second}, é inferior à velocidade média na matriz (\qty{0,020}{\metre\per\second}) porque a secção do extrudido é maior: $\num{0,020}/(B_W B_H) \approx \qty{0,018}{\metre\per\second}$.
+\paragraph{Velocidade.} A \autoref{fig:velocidades} mostra a velocidade no plano de simetria $Y = 0$, com escala comum. No troço da fieira, o perfil está desenvolvido, com velocidade máxima no núcleo ($X = 0$) e velocidade nula na parede lateral ($X = \qty{10}{\milli\metre}$). A jusante da aresta de saída, o núcleo desacelera e a periferia acelera até um escoamento em bloco (\textit{plug flow}). A velocidade no jato livre, \qty{0,018}{\metre\per\second}, é inferior à velocidade média na fieira (\qty{0,020}{\metre\per\second}) porque a secção do extrudido é maior: $\num{0,020}/(B_W B_H) \approx \qty{0,018}{\metre\per\second}$.
 
 \begin{figure}[htbp]
     \centering
@@ -74,7 +74,7 @@ onde $\dot{\gamma}_w$ é a taxa de deformação na parede, $h = 2H = \qty{2}{\mi
     \label{fig:deformacao}
 \end{figure}
 
-\paragraph{Deformação geométrica do extrudido.} A \autoref{fig:inchamento} compara a secção do extrudido em $z = \qty{60}{\milli\metre}$ com a secção nominal da matriz ($\qty{10}{\milli\metre} \times \qty{1}{\milli\metre}$). Nos dois casos, o inchamento é fortemente anisotrópico: o inchamento líquido na espessura ($B_H - 1$) é cinco a seis vezes superior ao da largura ($B_W - 1$). O bordo superior apresenta curvatura acentuada nos cantos exteriores, associada ao efeito das paredes laterais da matriz.
+\paragraph{Deformação geométrica do extrudido.} A \autoref{fig:inchamento} compara a secção do extrudido em $z = \qty{60}{\milli\metre}$ com a secção nominal da fieira ($\qty{10}{\milli\metre} \times \qty{1}{\milli\metre}$). Nos dois casos, o inchamento é fortemente anisotrópico: o inchamento líquido na espessura ($B_H - 1$) é cinco a seis vezes superior ao da largura ($B_W - 1$). O bordo superior apresenta curvatura acentuada nos cantos exteriores, associada ao efeito das paredes laterais da fieira.
 
 \begin{figure}[htbp]
     \centering
@@ -91,7 +91,7 @@ onde $\dot{\gamma}_w$ é a taxa de deformação na parede, $h = 2H = \qty{2}{\mi
         \caption{Caso M ($B_W = \num{1,023}$; $B_H = \num{1,110}$)}
         \label{fig:perfil_M}
     \end{subfigure}
-    \caption{Contorno da secção do extrudido em $z = \qty{60}{\milli\metre}$ sobreposto à secção nominal da matriz: (a) Caso R e (b) Caso M.}
+    \caption{Contorno da secção do extrudido em $z = \qty{60}{\milli\metre}$ sobreposto à secção nominal da fieira: (a) Caso R e (b) Caso M.}
     \label{fig:inchamento}
 \end{figure}
 
@@ -103,11 +103,11 @@ A lei de potência do Moplen HP648T é válida entre \qty{60}{\per\second} e \qt
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.72\textwidth]{Imagens/viscosidade_validade.png}
-    \caption{Curva reológica do Moplen HP648T a \qty{220}{\celsius} e confronto entre o intervalo de validade da ficha e a gama de taxas de deformação obtida na matriz.}
+    \caption{Curva reológica do Moplen HP648T a \qty{220}{\celsius} e confronto entre o intervalo de validade da ficha e a gama de taxas de deformação obtida na fieira.}
     \label{fig:validade_ficha}
 \end{figure}
 
-Na parede da matriz, a taxa de deformação varia entre \qty{5,7}{\per\second}, junto aos cantos, e \qty{80,3}{\per\second}; a média na secção $z = \qty{19}{\milli\metre}$ é de \qty{29,3}{\per\second}, e no núcleo do canal e no jato livre $\dot{\gamma}$ tende para zero. O limite superior de \qty{500}{\per\second} nunca é ultrapassado, mas a maior parte do volume escoa abaixo de \qty{60}{\per\second}, ou seja, por extrapolação. Como a lei de potência não inclui o patamar newtoniano, essa extrapolação sobrestima a viscosidade ($\eta \to \infty$ quando $\dot{\gamma} \to 0$).
+Na parede da fieira, a taxa de deformação varia entre \qty{5,7}{\per\second}, junto aos cantos, e \qty{80,3}{\per\second}; a média na secção $z = \qty{19}{\milli\metre}$ é de \qty{29,3}{\per\second}, e no núcleo do canal e no jato livre $\dot{\gamma}$ tende para zero. O limite superior de \qty{500}{\per\second} nunca é ultrapassado, mas a maior parte do volume escoa abaixo de \qty{60}{\per\second}, ou seja, por extrapolação. Como a lei de potência não inclui o patamar newtoniano, essa extrapolação sobrestima a viscosidade ($\eta \to \infty$ quando $\dot{\gamma} \to 0$).
 
 As consequências não são iguais para todos os resultados. A queda de pressão é controlada pela tensão de corte na parede, $\tau_w = \Delta p\,H/L$, e a camada junto à parede larga, que concentra essa resistência, opera a \qtyrange[range-phrase=--]{66}{80}{\per\second}, dentro do intervalo válido. Assim, $\Delta p$ é o resultado mais fiável do Caso M. Pelo contrário, a forma do perfil de velocidades no núcleo e junto aos cantos, e por consequência $B_W$ e $B_H$, dependem da viscosidade a baixas taxas de deformação, que é extrapolada; estes resultados são os mais afetados pela falta de dados reológicos abaixo de \qty{60}{\per\second}.
 
@@ -134,7 +134,7 @@ A \autoref{tab:sintese_RM} reúne as grandezas extraídas nos dois casos. A vari
         $\dot{\gamma}_{\min}$ na parede, cantos [\unit{\per\second}] & 5,5 & 5,7 & -- \\
         $\dot{\gamma}$ médio em $z = \qty{19}{\milli\metre}$ [\unit{\per\second}] & 29,1 & 29,3 & $+\qty{0,7}{\percent}$ \\
         $\eta$ a $\dot{\gamma}_{\max}$ [\unit{\pascal\second}] & 172 & 185 & $+\qty{7,6}{\percent}$ \\
-        $v_{\max}$ na matriz [\unit{\metre\per\second}] & 0,034 & 0,034 & -- \\
+        $v_{\max}$ na fieira [\unit{\metre\per\second}] & 0,034 & 0,034 & -- \\
         $v$ no jato livre [\unit{\metre\per\second}] & 0,018 & 0,018 & -- \\
         $B_W$ [--] & 1,017 & 1,023 & $+\qty{0,6}{\percent}$ \\
         $B_H$ [--] & 1,096 & 1,110 & $+\qty{1,3}{\percent}$ \\
@@ -144,4 +144,4 @@ A \autoref{tab:sintese_RM} reúne as grandezas extraídas nos dois casos. A vari
     \end{tabular}
 \end{table}
 
-As pressões estão arredondadas; $\Delta p$ e as variações foram calculadas a partir dos valores não arredondados. A cinemática praticamente não se altera entre casos: as taxas de deformação variam menos de \qty{3}{\percent}, pois são impostas sobretudo pela geometria da matriz e pelo caudal. As diferenças entre R e M concentram-se na queda de pressão e, em menor grau, na deformação do extrudido, discutidas na \autoref{sec:discussao}.
+As pressões estão arredondadas; $\Delta p$ e as variações foram calculadas a partir dos valores não arredondados. A cinemática praticamente não se altera entre casos: as taxas de deformação variam menos de \qty{3}{\percent}, pois são impostas sobretudo pela geometria da fieira e pelo caudal. As diferenças entre R e M concentram-se na queda de pressão e, em menor grau, na deformação do extrudido, discutidas na \autoref{sec:discussao}.

@@ -122,6 +122,6 @@ Checked against `PPFM_Portfolio_CAE_Extrusao_Polyflow_2026-2027_REV2.pdf` (secti
    - `Página 5` (PDF p. 8) contains only Figures 1 and 2 with whitespace; placing Figures 1–4 with `[t]` instead of `[htbp]` and shrinking Figure 4 (`viscosidade_validade.png`) from `0.72\textwidth` to `0.58\textwidth` lets text flow cleanly around the floats.
    - If allowed by group formatting, changing `\setstretch{1.25}` in `main.tex` to `\setstretch{1.15}` alone reduces the 8.7-page body by ~0.7 pages.
 2. **Section 1.1** (~0.25 p): Q1 and Q2 can be tightened into one concise paragraph.
-3. **Section 3.3** (~0.25 p): the first paragraph (`Na parede da matriz, a taxa de deformação varia entre 5,7 s⁻¹...`) repeats the wall shear-rate numbers already in 3.2 and Table 4; merge its one new point ($\eta \to \infty$ as $\dot{\gamma} \to 0$) into the reliability paragraph.
+3. **Section 3.3** (~0.25 p): the first paragraph (`Na parede da fieira, a taxa de deformação varia entre 5,7 s⁻¹...`) repeats the wall shear-rate numbers already in 3.2 and Table 4; merge its one new point ($\eta \to \infty$ as $\dot{\gamma} \to 0$) into the reliability paragraph.
 4. **Table 4** (~0.15 p): drop the rows for $\bar p_{\text{saída}}$, $\dot\gamma_{\min}$ and $v_{\max}$ (already stated in the text or redundant with $\Delta p$).
 5. **Section 4.1** (~0.3 p): P1 and P2 repeat numerical pairs already in Table 1 and Table 4; refer to `\autoref{tab:sintese_RM}` instead of re-listing both cases' numbers.
