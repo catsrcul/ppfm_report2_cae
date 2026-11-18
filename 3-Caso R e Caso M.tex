@@ -23,7 +23,7 @@ A estratégia de evolução convergiu nos dois casos ($S = 1$ em 10 passos, sem 
     \end{tabular}
 \end{table}
 
-A coerência física foi verificada confrontando $\Delta p$ com a solução analítica unidimensional para escoamento desenvolvido de um fluido da lei de potência entre placas paralelas infinitas:
+A coerência física foi verificada ao confrontar $\Delta p$ com a solução analítica unidimensional para escoamento desenvolvido de um fluido da lei de potência entre placas paralelas infinitas:
 \begin{equation*}
     \Delta p_{\mathrm{1D}} = \frac{2L}{h}K\dot{\gamma}_w^n, \quad \text{com} \quad \dot{\gamma}_w = \left(\frac{2n+1}{3n}\right)\frac{6Q_{\mathrm{total}}}{W h^2},
 \end{equation*}
@@ -100,7 +100,7 @@ onde $\dot{\gamma}_w$ é a taxa de deformação na parede, $h = 2H = \qty{2}{\mi
 
 A lei de potência do Moplen HP648T é válida entre \qty{60}{\per\second} e \qty{500}{\per\second}, a \qty{220}{\celsius}~\cite{FichaMoplen}. A \autoref{fig:validade_ficha}, apresentada no Anexo~\ref{app:validade}, confronta este intervalo com as taxas de deformação calculadas.
 
-Na parede da fieira, a taxa de deformação varia entre \qty{5,7}{\per\second}, junto aos cantos, e \qty{80,3}{\per\second}; a média na secção $z = \qty{19}{\milli\metre}$ é de \qty{29,3}{\per\second}, e no núcleo do canal e no jato livre $\dot{\gamma}$ tende para zero. O limite superior de \qty{500}{\per\second} nunca é ultrapassado, mas a maior parte do volume escoa abaixo de \qty{60}{\per\second}, ou seja, por extrapolação. Como a lei de potência não inclui o patamar newtoniano, essa extrapolação sobrestima a viscosidade ($\eta \to \infty$ quando $\dot{\gamma} \to 0$).
+Na parede da fieira, $\dot{\gamma}$ varia entre \qty{5,7}{\per\second} (cantos) e \qty{80,3}{\per\second}, com valor médio em $z = \qty{19}{\milli\metre}$ na \autoref{tab:sintese_RM} (linha $\dot{\gamma}$ médio), e tende para zero no núcleo e no jato livre. O limite de \qty{500}{\per\second} nunca é ultrapassado, mas a maior parte do volume escoa abaixo de \qty{60}{\per\second}, onde a lei de potência sem patamar newtoniano sobrestima a viscosidade ($\eta \to \infty$ quando $\dot{\gamma} \to 0$).
 
 As consequências não são iguais para todos os resultados. A queda de pressão é controlada pela tensão de corte na parede, $\tau_w = \Delta p\,H/L$, e a camada junto à parede larga, que concentra essa resistência, opera a \qtyrange[range-phrase=--]{66}{80}{\per\second}, dentro do intervalo válido. Assim, $\Delta p$ é o resultado mais fiável do Caso M. Pelo contrário, a forma do perfil de velocidades no núcleo e junto aos cantos, e por consequência $B_W$ e $B_H$, dependem da viscosidade a baixas taxas de deformação, que é extrapolada; estes resultados são os mais afetados pela falta de dados reológicos abaixo de \qty{60}{\per\second}.
 
