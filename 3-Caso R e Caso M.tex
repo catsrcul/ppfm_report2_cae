@@ -24,9 +24,10 @@ A estratégia de evolução convergiu nos dois casos ($S = 1$ em 10 passos, sem 
 \end{table}
 
 A coerência física foi verificada ao confrontar $\Delta p$ com a solução analítica unidimensional para escoamento desenvolvido de um fluido da lei de potência entre placas paralelas infinitas:
-\begin{equation*}
+\begin{equation}
     \Delta p_{\mathrm{1D}} = \frac{2L}{h}K\dot{\gamma}_w^n, \quad \text{com} \quad \dot{\gamma}_w = \left(\frac{2n+1}{3n}\right)\frac{6Q_{\mathrm{total}}}{W h^2},
-\end{equation*}
+    \label{eq:dp1d}
+\end{equation}
 onde $\dot{\gamma}_w$ é a taxa de deformação na parede, $h = 2H = \qty{2}{\milli\metre}$, $W = \qty{20}{\milli\metre}$, $L = \qty{20}{\milli\metre}$ e $Q_{\mathrm{total}} = 4Q = \qty{8e-7}{\metre\cubed\per\second}$. Os valores do Polyflow são cerca de \qty{9}{\percent} superiores aos analíticos (\autoref{tab:sintese_RM}), diferença atribuível às paredes laterais finitas ($W/(2H) = 10$), que a solução 1D ignora, e ao rearranjo do escoamento junto à saída. A razão entre casos, $\Delta p_M/\Delta p_R$, é praticamente igual nos dois métodos (\num{1,049} no Polyflow e \num{1,050} na solução analítica), o que confirma a coerência física do modelo.
 
 \subsection{Campos de Escoamento e Deformação do Extrudido}
@@ -36,14 +37,14 @@ onde $\dot{\gamma}_w$ é a taxa de deformação na parede, $h = 2H = \qty{2}{\mi
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[b]{0.4\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{Imagens/vel_R.jpeg}
         \caption{Caso R (referência)}
         \label{fig:vel_R}
     \end{subfigure}
     \hspace{0.02\textwidth}
-    \begin{subfigure}[b]{0.4\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{Imagens/vel_M.jpeg}
         \caption{Caso M (Moplen HP648T)}
@@ -57,14 +58,14 @@ onde $\dot{\gamma}_w$ é a taxa de deformação na parede, $h = 2H = \qty{2}{\mi
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[b]{0.4\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{Imagens/shear_R.jpeg}
         \caption{Caso R (referência)}
         \label{fig:shear_R}
     \end{subfigure}
     \hspace{0.02\textwidth}
-    \begin{subfigure}[b]{0.4\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{Imagens/shear_M.jpeg}
         \caption{Caso M (Moplen HP648T)}
@@ -78,14 +79,14 @@ onde $\dot{\gamma}_w$ é a taxa de deformação na parede, $h = 2H = \qty{2}{\mi
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[b]{0.4\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{Imagens/perfil_R.jpeg}
         \caption{Caso R ($B_W = \num{1,017}$; $B_H = \num{1,096}$)}
         \label{fig:perfil_R}
     \end{subfigure}
     \hspace{0.02\textwidth}
-    \begin{subfigure}[b]{0.4\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{Imagens/perfil_M.jpeg}
         \caption{Caso M ($B_W = \num{1,023}$; $B_H = \num{1,110}$)}
