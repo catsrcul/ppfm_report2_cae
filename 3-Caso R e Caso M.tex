@@ -34,7 +34,7 @@ onde $\dot{\gamma}_w$ é a taxa de deformação na parede, $h = 2H = \qty{2}{\mi
 
 \paragraph{Velocidade.} A \autoref{fig:velocidades} mostra a velocidade no plano de simetria $Y = 0$, com escala comum. No troço da fieira, o perfil está desenvolvido, com velocidade máxima no núcleo ($X = 0$) e velocidade nula na parede lateral ($X = \qty{10}{\milli\metre}$). A jusante da aresta de saída, o núcleo desacelera e a periferia acelera até um escoamento em bloco (\textit{plug flow}). A velocidade no jato livre, \qty{0,018}{\metre\per\second}, é inferior à velocidade média na fieira (\qty{0,020}{\metre\per\second}) porque a secção do extrudido é maior: $\num{0,020}/(B_W B_H) \approx \qty{0,018}{\metre\per\second}$.
 
-\begin{figure}[t]
+\begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
@@ -55,7 +55,7 @@ onde $\dot{\gamma}_w$ é a taxa de deformação na parede, $h = 2H = \qty{2}{\mi
 
 \paragraph{Taxa de deformação.} A \autoref{fig:deformacao} mostra a taxa de deformação local à superfície do domínio, com escala comum. No troço desenvolvido, a parede larga apresenta valores próximos da estimativa analítica $\dot{\gamma}_w$ (\qtyrange[range-phrase=--]{66}{72}{\per\second} na figura), que decaem para os cantos junto à parede lateral. O máximo do domínio surge numa faixa estreita imediatamente antes da aresta de saída ($z = \qty{20}{\milli\metre}$), onde a condição muda de não escorregamento para superfície livre. Esta aresta é uma singularidade do modelo: o valor máximo aí calculado depende da malha e aumentaria com o refinamento, pelo que o valor de \qty{81,5}{\per\second} (Caso R) não deve ser tomado como um valor físico. No jato livre, o perfil uniformiza-se e a taxa de deformação tende para zero.
 
-\begin{figure}[t]
+\begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
@@ -76,7 +76,7 @@ onde $\dot{\gamma}_w$ é a taxa de deformação na parede, $h = 2H = \qty{2}{\mi
 
 \paragraph{Deformação geométrica do extrudido.} A \autoref{fig:inchamento} compara a secção do extrudido em $z = \qty{60}{\milli\metre}$ com a secção nominal da fieira ($\qty{10}{\milli\metre} \times \qty{1}{\milli\metre}$). Nos dois casos, o inchamento é fortemente anisotrópico: o inchamento líquido na espessura ($B_H - 1$) é cinco a seis vezes superior ao da largura ($B_W - 1$). O bordo superior apresenta curvatura acentuada nos cantos exteriores, associada ao efeito das paredes laterais da fieira.
 
-\begin{figure}[t]
+\begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
@@ -100,7 +100,7 @@ onde $\dot{\gamma}_w$ é a taxa de deformação na parede, $h = 2H = \qty{2}{\mi
 
 A lei de potência do Moplen HP648T é válida entre \qty{60}{\per\second} e \qty{500}{\per\second}, a \qty{220}{\celsius}~\cite{FichaMoplen}. A \autoref{fig:validade_ficha} confronta este intervalo com as taxas de deformação calculadas.
 
-\begin{figure}[t]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.58\textwidth]{Imagens/viscosidade_validade.png}
     \caption{Curva reológica do Moplen HP648T a \qty{220}{\celsius} e confronto entre o intervalo de validade da ficha e a gama de taxas de deformação obtida na fieira.}
