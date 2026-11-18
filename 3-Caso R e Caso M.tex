@@ -55,7 +55,7 @@ onde $\dot{\gamma}_w$ é a taxa de deformação na parede, $h = 2H = \qty{2}{\mi
 
 \paragraph{Taxa de deformação.} A \autoref{fig:deformacao} mostra a taxa de deformação local à superfície do domínio, com escala comum. No troço desenvolvido, a parede larga apresenta valores próximos da estimativa analítica $\dot{\gamma}_w$ (\qtyrange[range-phrase=--]{66}{72}{\per\second} na figura), que decaem para os cantos junto à parede lateral. O máximo do domínio surge numa faixa estreita imediatamente antes da aresta de saída ($z = \qty{20}{\milli\metre}$), onde a condição muda de não escorregamento para superfície livre. Esta aresta é uma singularidade do modelo: o valor máximo aí calculado depende da malha e aumentaria com o refinamento, pelo que o valor de \qty{81,5}{\per\second} (Caso R) não deve ser tomado como um valor físico. No jato livre, o perfil uniformiza-se e a taxa de deformação tende para zero.
 
-\begin{figure}[t]
+\begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
@@ -78,14 +78,14 @@ onde $\dot{\gamma}_w$ é a taxa de deformação na parede, $h = 2H = \qty{2}{\mi
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[b]{0.48\textwidth}
+    \begin{subfigure}[b]{0.4\textwidth}
         \centering
         \includegraphics[width=\textwidth]{Imagens/perfil_R.jpeg}
         \caption{Caso R ($B_W = \num{1,017}$; $B_H = \num{1,096}$)}
         \label{fig:perfil_R}
     \end{subfigure}
     \hspace{0.02\textwidth}
-    \begin{subfigure}[b]{0.48\textwidth}
+    \begin{subfigure}[b]{0.4\textwidth}
         \centering
         \includegraphics[width=\textwidth]{Imagens/perfil_M.jpeg}
         \caption{Caso M ($B_W = \num{1,023}$; $B_H = \num{1,110}$)}
@@ -109,7 +109,7 @@ As consequências não são iguais para todos os resultados. A queda de pressão
 
 A \autoref{tab:sintese_RM} reúne as grandezas extraídas nos dois casos. A variação relativa é calculada por $(M-R)/R$.
 
-\begin{table}[t]
+\begin{table}[H]
     \centering
     \small
     \caption{Síntese dos resultados dos Casos R e M ($Q = \qty{2e-7}{\metre\cubed\per\second}$ no quarto do domínio).}

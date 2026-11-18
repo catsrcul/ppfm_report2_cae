@@ -37,12 +37,21 @@ onde $\eta$ é a viscosidade aparente, $\dot{\gamma}$ a taxa de deformação, $\
 
 Os parâmetros do Caso M foram confirmados com os valores de controlo da ficha~\cite{FichaMoplen}: pela \autoref{eq:leipotencia} obtém-se $\eta = \qty{206}{\pascal\second}$ a \qty{60}{\per\second} e $\eta = \qty{96}{\pascal\second}$ a \qty{500}{\per\second}, iguais aos tabelados. Fora do intervalo de \qtyrange{60}{500}{\per\second}, a lei de potência é extrapolada (\autoref{subsec:validade}). O artigo usa $K = \qty{1000}{\pascal\second\tothe{n}}$ e $n = \num{0,5}$~\cite{Zhang2026Anisotropic}; o Caso R usa o mesmo $K$, mas $n = \num{0,6}$, fixado no enunciado, pelo que reproduz o artigo na geometria e em $K$, mas não em $n$.
 
+
+
+\subsection{Configuração Numérica}
+\label{subsec:numerica}
+
+Seguiu-se a configuração trabalhada nas aulas. Como $n < \num{0,75}$ nos dois casos, ativou-se a opção \textit{Enable evolution on moving boundaries}, que introduz progressivamente a superfície livre fazendo variar o parâmetro de evolução $S$ de 0 a 1 (passo inicial \num{0,01}, mínimo \num{e-4}, máximo \num{0,25}). A lei de viscosidade é resolvida pelo método de Newton e a malha do jato livre é ajustada pelo algoritmo de remalhagem Optimesh~3D. Em cada passo, a convergência é atingida quando a variação relativa da solução é inferior a \num{e-3}, critério definido pela equipa docente. Nos dois casos a evolução chegou a $S = 1$ em 10 passos, sem passos falhados, pelo que não foi necessário ativar as iterações de Picard. Estas opções afetam apenas a estabilidade numérica, não o modelo reológico, o caudal nem as condições físicas.
+
+
+
 \subsection{Condições de Fronteira}
 \label{subsec:fronteiras}
 
 As condições de fronteira foram atribuídas às \textit{Named Selections} fornecidas, iguais nos dois casos (\autoref{tab:fronteiras}).
 
-\begin{table}[t]
+\begin{table}[H]
     \centering
     \small
     \caption{Condições de fronteira aplicadas nos Casos R e M.}
@@ -60,8 +69,3 @@ As condições de fronteira foram atribuídas às \textit{Named Selections} forn
         \bottomrule
     \end{tabularx}
 \end{table}
-
-\subsection{Configuração Numérica}
-\label{subsec:numerica}
-
-Seguiu-se a configuração trabalhada nas aulas. Como $n < \num{0,75}$ nos dois casos, ativou-se a opção \textit{Enable evolution on moving boundaries}, que introduz progressivamente a superfície livre fazendo variar o parâmetro de evolução $S$ de 0 a 1 (passo inicial \num{0,01}, mínimo \num{e-4}, máximo \num{0,25}). A lei de viscosidade é resolvida pelo método de Newton e a malha do jato livre é ajustada pelo algoritmo de remalhagem Optimesh~3D. Em cada passo, a convergência é atingida quando a variação relativa da solução é inferior a \num{e-3}, critério definido pela equipa docente. Nos dois casos a evolução chegou a $S = 1$ em 10 passos, sem passos falhados, pelo que não foi necessário ativar as iterações de Picard. Estas opções afetam apenas a estabilidade numérica, não o modelo reológico, o caudal nem as condições físicas.
