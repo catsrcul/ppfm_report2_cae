@@ -55,7 +55,7 @@ To avoid merge conflicts, **each person should only edit their assigned section 
 
 ---
 
-## 4. Status Against the Brief (checked 18/11/2026)
+## 4. Status Against the Brief (checked 19/11/2026)
 
 Checked against `PPFM_Portfolio_CAE_Extrusao_Polyflow_2026-2027_REV2.pdf` (sections 4–10) and `PPFM_Ficha_Reologica_Grupo_3_Moplen.pdf`. Rating: **great** = fully done and strong, **good** = done, **ok** = done with small issues, **bad** = missing or needs work, **to check** = can't be judged from the report itself.
 
@@ -76,7 +76,7 @@ Checked against `PPFM_Portfolio_CAE_Extrusao_Polyflow_2026-2027_REV2.pdf` (secti
 | Brief asks | Status | Notes / what's missing |
 | :--- | :---: | :--- |
 | Q1: Problem studied and main simplifications | **good** | Incompressible, fully developed laminar, isothermal, power-law, infinite width, plus why existing elastic-swell models don't capture slit-die anisotropy. |
-| Q2: Role of die land vs. free-surface region | **good** | Wall confinement and velocity profile development vs. stress-free velocity relaxation and swell. |
+| Q2: Role of die land vs. free-surface region | **great** | Links wall shear stresses and $\Delta p$ to the die land, and zero-traction relaxation under mass conservation (plug flow, swell calculation) to the free jet. |
 | Q3: Why not a physical validation, and where across the width validity is lost | **great** | Power law has no elasticity; lateral walls ignored by infinite-width assumption, errors > 30 % at the width edges cited. |
 | P1, P2, P3: Predictions with justification | **good** | All three present and kept as pre-simulation physical reasoning; formatting and `pt-PT` prose cleaned (`terminology: fieira de extrusão / fieira`). |
 
@@ -99,7 +99,7 @@ Checked against `PPFM_Portfolio_CAE_Extrusao_Polyflow_2026-2027_REV2.pdf` (secti
 | Convergence | **good** | $S = 1$ in 10 steps, 0 failed steps, criterion $10^{-3}$, CPU times reported ($409\text{ s}$ and $336\text{ s}$). |
 | Flow conservation $Q_{\mathrm{in}}$, $Q_{\mathrm{out}}$, $\varepsilon_Q$ | **good** | `Tabela 2`, $\varepsilon_Q = 0.009\text{ \%}$ (residual free-surface flux $1.8\times10^{-11}\text{ m}^3/\text{s}$). |
 | $\Delta p$ from area averages & physical coherence | **great** | Area averages at $z=0$ and $z=20\text{ mm}$ plus 1D parallel-plate analytical check (~9 % 3D wall/exit gap explained, $\Delta p_M/\Delta p_R = 1.049$ vs. $1.050$). |
-| Velocity map with scale and units, same in R and M | **good** | `Figura 1`: common scale $0\text{--}0.035\text{ m/s}$ on $Y=0$. |
+| Velocity map with scale and units, same in R and M | **great** | `Figura 1`: common scale $0\text{--}0.035\text{ m/s}$ on $Y=0$ with flow direction explicitly stated (right to left, $+Z$). |
 | Shear-rate field, critical region and range, same scale | **great** | `Figura 2`: common scale $0\text{--}90\text{ s}^{-1}$, exit-lip singularity ($z=20\text{ mm}$) flagged as mesh-dependent ($81.5$ / $80.3\text{ s}^{-1}$). |
 | $B_W$, $B_H$ at $40\text{ mm}$ after the die exit | **great** | Values correct at $z = 60\text{ mm}$. `Figura 3` caption explicitly distinguishes `linha a preto` (extrudate contour) from `retângulo verde preenchido` (nominal die cross-section). |
 | Case M shear rates vs. datasheet range | **great** | `Figura 4` (`Anexo B`) plus physical explanation of why $\Delta p$ is reliable (governed by $\tau_w = \Delta p\,H/L$ at $66\text{--}80\text{ s}^{-1}$) and why $B_W, B_H$ are affected by low-$\dot{\gamma}$ extrapolation ($< 60\text{ s}^{-1}$). *(Minor cosmetic note: axes carry units, legend omits units on $K$ and ranges; script not in repo.)* |
@@ -111,7 +111,17 @@ Checked against `PPFM_Portfolio_CAE_Extrusao_Polyflow_2026-2027_REV2.pdf` (secti
 | :--- | :---: | :--- |
 | Q1: Which predictions were confirmed, and why | **great** | P1 confirmed with exit-singularity caveat (`Comminal2018Extrudate`), P2 confirmed with the $13.9\text{ s}^{-1}$ viscosity crossover and wall shear stress equilibrium, P3 confirmed in direction with sub-element scale caveat ($0.06\text{ mm}$ / $0.014\text{ mm} \ll 0.3\text{ mm}$) and 2D core vs. 3D edge anisotropy (`Zhang2026Anisotropic`, `Tang2019Polypropylene`). |
 | Q2: Main R vs M difference and the property behind it | **great** | $\Delta p$ $+4.9\text{ }\%$, explained by higher $n = 0.64$ (less shear-thinning above $13.9\text{ s}^{-1}$), while kinematics remain geometry/flow-rate controlled ($< 3\text{ }\%$ change). |
-| Q3: Effect of higher flow rate on $\Delta p$, $\dot\gamma$, $\eta$ | **great** | Exact power-law scalings ($\dot{\gamma}\propto Q$, $\eta\propto Q^{n-1}$, $\Delta p\propto Q^n$) evaluated at $2Q$: $\dot{\gamma}_w \to 143\text{ s}^{-1}$, valid half-thickness fraction rises from $10\text{ }\%$ to $42\text{ }\%$, $\eta$ drops to $78\text{ }\%$, $\Delta p_M/\Delta p_R$ gap widens from $4.9\text{ }\%$ to $7.9\text{ }\%$, plus contrast with real PP elastic swell (`Tang2019Polypropylene`). |
+| Q3: Effect of higher flow rate on $\Delta p$, $\dot\gamma$, $\eta$ | **great** | Exact power-law scalings ($\dot{\gamma}\propto Q$, $\eta\propto Q^{n-1}$, $\Delta p\propto Q^n$ citing Eq. 2) evaluated at $2Q$: $\dot{\gamma}_w \to 143\text{ s}^{-1}$, valid half-thickness fraction rises from $10\text{ }\%$ to $42\text{ }\%$, $\eta$ drops to $78\text{ }\%$, $\Delta p_M/\Delta p_R$ gap widens from $4.9\text{ }\%$ to $7.9\text{ }\%$, plus contrast with real PP elastic swell (`Tang2019Polypropylene`). |
 | Q4: Main limitation and next step | **great** | Absence of viscoelasticity (`Tang2019Polypropylene`), low-$\dot{\gamma}$ extrapolation, isothermal assumption, and uniform mesh (`Comminal2018Extrudate`); next step specifies rotational oscillatory + capillary + extensional rheometry to fit Cross/Carreau-Yasuda and multi-mode PTT/Giesekus models, mesh refinement, and slit-die trials. |
 | Scientific limit: viscous swell is not a quantitative prediction | **great** | Explicitly stated in 4.3 and 4.5 (`Zhang2026Anisotropic`, `Tang2019Polypropylene`). |
 | Engineering decision | **great** | Clear two-part decision: approve material substitution regarding die pressure ($\approx 300\text{ kPa}$, $+5\text{ }\%$, inside valid datasheet range); do not resize the die aperture for swell until viscoelastic simulation and experimental validation are completed. |
+
+### Pre-Submission Checklist (Brief Section 9 — Due 19/11/2026)
+
+- [x] Cases R and M configured with supplied geometry and mesh, and documented in Section 2 (`Tabela 1` & `Anexo A`).
+- [x] Convergence ($S = 1$ in 10 steps, 0 failed) and flow conservation ($\varepsilon_Q = 0.009\text{ \%}$) verified in both cases (`Tabela 2`).
+- [x] Pressure drop ($\Delta p$), velocity (`Figura 1`), shear rate (`Figura 2`), $B_W$, and $B_H$ (`Figura 3`, $z = 60\text{ mm}$) reported with common scales and units (`Tabela 3`).
+- [x] Case M shear-rate range compared against Group 3 datasheet ($60\text{--}500\text{ s}^{-1}$, Section 3.3 & `Anexo B`).
+- [x] References (4 lean verified sources), AI declaration (`Claude; Gemini; Consensus`), and exact 7-page main body (`Página 1`–`7`) verified in `main.pdf`.
+- [ ] Commit/push latest polish edits and export final `main.pdf`.
+- [ ] **Ansys Workbench Archive (Issue [#1](https://github.com/gabriel-t-ribeiro/ppfm_report2_cae/issues/1), `@leo20102003`):** Export `P2.wbpj` via **File → Archive (`.wbpz`)** with external files included and test reopening Cases R and M on another PC before submitting.
