@@ -29,7 +29,7 @@ A coerência física foi verificada ao confrontar $\Delta p$ com a solução ana
     \Delta p_{\mathrm{1D}} = \frac{2L}{h}K\dot{\gamma}_w^n, \quad \text{com} \quad \dot{\gamma}_w = \left(\frac{2n+1}{3n}\right)\frac{6Q_{\mathrm{total}}}{W h^2},
     \label{eq:dp1d}
 \end{equation}
-onde $\dot{\gamma}_w$ é a taxa de deformação na parede, $h = 2H = \qty{2}{\milli\metre}$, $W = \qty{20}{\milli\metre}$, $L = \qty{20}{\milli\metre}$ e $Q_{\mathrm{total}} = 4Q = \qty{8e-7}{\metre\cubed\per\second}$. Os valores do Polyflow são cerca de \qty{9}{\percent} superiores aos analíticos (\autoref{tab:sintese_RM}), diferença atribuível às paredes laterais finitas ($W/(2H) = 10$), que a solução 1D ignora, e ao rearranjo do escoamento junto à saída. A razão entre casos, $\Delta p_M/\Delta p_R$, é praticamente igual nos dois métodos (\num{1,049} no Polyflow e \num{1,050} na solução analítica), o que confirma a coerência física do modelo.
+onde $\dot{\gamma}_w$ é a taxa de deformação na parede, $h = 2H = \qty{2}{\milli\metre}$, $W = \qty{20}{\milli\metre}$, $L = \qty{20}{\milli\metre}$ e $Q_{\mathrm{total}} = 4Q = \qty{8e-7}{\metre\cubed\per\second}$. Os valores do Polyflow são cerca de \qty{9}{\percent} superiores aos analíticos (\autoref{tab:sintese_RM}), diferença atribuível às paredes laterais finitas ($W/(2H) = 10$), que a solução 1D ignora, e ao rearranjo do escoamento junto à saída. A razão entre casos, $\Delta p_M/\Delta p_R$, é igual nos dois métodos (\num{1,049} no Polyflow e na solução analítica), o que confirma a coerência física do modelo.
 
 \subsection{Campos de Escoamento e Deformação do Extrudido}
 \label{subsec:resultados}
@@ -76,7 +76,7 @@ onde $\dot{\gamma}_w$ é a taxa de deformação na parede, $h = 2H = \qty{2}{\mi
     \label{fig:deformacao}
 \end{figure}
 
-\paragraph{Deformação geométrica do extrudido.} A \autoref{fig:inchamento} compara a secção do extrudido em $z = \qty{60}{\milli\metre}$ com a secção nominal da fieira ($\qty{10}{\milli\metre} \times \qty{1}{\milli\metre}$). Nos dois casos, o inchamento é fortemente anisotrópico: o inchamento líquido na espessura ($B_H - 1$) é cinco a seis vezes superior ao da largura ($B_W - 1$). O bordo superior apresenta curvatura acentuada nos cantos exteriores, associada ao efeito das paredes laterais da fieira.
+\paragraph{Deformação geométrica do extrudido.} A \autoref{fig:inchamento} compara a secção do extrudido em $z = \qty{60}{\milli\metre}$ com a secção nominal da fieira ($\qty{10}{\milli\metre} \times \qty{1}{\milli\metre}$). Nos dois casos, o inchamento é fortemente anisotrópico: o inchamento líquido na espessura ($B_H - 1$) é cerca de cinco vezes superior ao da largura ($B_W - 1$). O bordo superior apresenta curvatura acentuada nos cantos exteriores, associada ao efeito das paredes laterais da fieira.
 
 \begin{figure}[H]
     \centering
@@ -124,12 +124,12 @@ A \autoref{tab:sintese_RM} reúne as grandezas extraídas nos dois casos. A vari
         $\bar{p}_{\mathrm{ent}}$ [\unit{\kilo\pascal}] & 288,0 & 302,3 & $+\qty{5,0}{\percent}$ \\
         $\bar{p}_{\text{saída}}$ [\unit{\kilo\pascal}] & 0,5 & 0,8 & --$^{a}$ \\
         $\Delta p$ (Polyflow) [\unit{\kilo\pascal}] & 287,4 & 301,5 & $+\qty{4,9}{\percent}$ \\
-        $\Delta p_{\mathrm{1D}}$ (analítico) [\unit{\kilo\pascal}] & 263,0 & 276,2 & $+\qty{5,0}{\percent}$ \\
+        $\Delta p_{\mathrm{1D}}$ (analítico) [\unit{\kilo\pascal}] & 263,2 & 276,1 & $+\qty{4,9}{\percent}$ \\
         $\dot{\gamma}_w$ (analítico) [\unit{\per\second}] & 73,3 & 71,3 & $-\qty{2,8}{\percent}$ \\
         $\dot{\gamma}_{\max}$ na parede, junto à aresta$^{b}$ [\unit{\per\second}] & 81,5 & 80,3 & $-\qty{1,5}{\percent}$ \\
         $\dot{\gamma}_{\min}$ na parede, cantos [\unit{\per\second}] & 5,5 & 5,7 & -- \\
         $\dot{\gamma}$ médio em $z = \qty{19}{\milli\metre}$ [\unit{\per\second}] & 29,1 & 29,3 & $+\qty{0,7}{\percent}$ \\
-        $\eta$ a $\dot{\gamma}_{\max}$ [\unit{\pascal\second}] & 172 & 185 & $+\qty{7,6}{\percent}$ \\
+        $\eta$ a $\dot{\gamma}_w$ (analítico) [\unit{\pascal\second}] & 179 & 194 & $+\qty{8,0}{\percent}$ \\
         $v_{\max}$ na fieira [\unit{\metre\per\second}] & 0,034 & 0,034 & -- \\
         $v$ no jato livre [\unit{\metre\per\second}] & 0,018 & 0,018 & -- \\
         $B_W$ [--] & 1,017 & 1,023 & $+\qty{0,6}{\percent}$ \\

@@ -98,7 +98,7 @@ Checked against `PPFM_Portfolio_CAE_Extrusao_Polyflow_2026-2027_REV2.pdf` (secti
 | :--- | :---: | :--- |
 | Convergence | **good** | $S = 1$ in 10 steps, 0 failed steps, criterion $10^{-3}$, CPU times reported ($409\text{ s}$ and $336\text{ s}$). |
 | Flow conservation $Q_{\mathrm{in}}$, $Q_{\mathrm{out}}$, $\varepsilon_Q$ | **good** | `Tabela 2`, $\varepsilon_Q = 0.009\text{ \%}$ (residual free-surface flux $1.8\times10^{-11}\text{ m}^3/\text{s}$). |
-| $\Delta p$ from area averages & physical coherence | **great** | Area averages at $z=0$ and $z=20\text{ mm}$ plus 1D parallel-plate analytical check (~9 % 3D wall/exit gap explained, $\Delta p_M/\Delta p_R = 1.049$ vs. $1.050$). |
+| $\Delta p$ from area averages & physical coherence | **great** | Area averages at $z=0$ and $z=20\text{ mm}$ plus 1D parallel-plate analytical check (~9 % 3D wall/exit gap explained, $\Delta p_M/\Delta p_R = 1.049$ in both methods). |
 | Velocity map with scale and units, same in R and M | **great** | `Figura 1`: common scale $0\text{--}0.035\text{ m/s}$ on $Y=0$ with flow direction explicitly stated (right to left, $+Z$). |
 | Shear-rate field, critical region and range, same scale | **great** | `Figura 2`: common scale $0\text{--}90\text{ s}^{-1}$, exit-lip singularity ($z=20\text{ mm}$) flagged as mesh-dependent ($81.5$ / $80.3\text{ s}^{-1}$). |
 | $B_W$, $B_H$ at $40\text{ mm}$ after the die exit | **great** | Values correct at $z = 60\text{ mm}$. `Figura 3` caption explicitly distinguishes `linha a preto` (extrudate contour) from `retângulo verde preenchido` (nominal die cross-section). |
